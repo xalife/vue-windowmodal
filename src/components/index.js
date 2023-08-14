@@ -1,2 +1,3 @@
 import WindowModal from './WindowModal.vue';
-export default { WindowModal };
+
+export default WindowModal;

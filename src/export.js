@@ -1,16 +1,5 @@
 
-import * as components from './components';
 
-const componentsList = components?.default;
+import WindowModal from "@/components/";
 
-const IncoreComponents = {
-    install(Vue) {
-
-      
-        Object.keys(componentsList).forEach(name => {
-            Vue.component(name, componentsList[name]);
-        })
-    }
-}
-
-export default IncoreComponents;
+export default WindowModal;

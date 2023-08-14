@@ -28,6 +28,7 @@ import { computed, ref } from "vue";
 import DragDot from './inner/DragDot.vue';
 import HeaderComp from './inner/HeaderComp.vue';
 export default {
+  name: 'WindowModal',
   components: {
     DragDot,
     HeaderComp
@@ -95,7 +96,6 @@ export default {
 
 
     const minimize = (e) => {
-      console.log(e);
 
       page.value.isMinimized = !page.value.isMinimized;
 
@@ -120,21 +120,20 @@ export default {
       }
     }
 
-    const closeModal = () => {
-      console.log("MODALI KAPAT");
-    };
+
 
 
 
     const onElementFocused = () => {
-      console.log("ELEMENT FOCUSED");
+      emit('onFocused');
     };
+
+
 
 
 
     return {
       onElementFocused,
-      closeModal,
       page,
       onHeaderDrag,
       minimize,
@@ -145,21 +144,6 @@ export default {
 };
 </script>
 
-<style scoped>
-.dot-wrapper {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  pointer-events: none;
-}
-
-.windowBody {
-  box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
-  flex: 1;
-  background: #fff;
-}
-
-.windowElement {
-  border-radius: 5px;
-}
+<style>
+@import url("../assets/style.css");
 </style>

@@ -35,7 +35,7 @@ import { onMounted, nextTick, onBeforeUnmount, defineEmits, ref } from "vue";
 
 
 
-const emit = defineEmits(['dragging']);
+const emit = defineEmits(['dragging', 'minimize', 'expand']);
 
 const moveWindowModalButton = ref();
 
@@ -46,7 +46,6 @@ const onDragStarted = (e) => {
     window.addEventListener("mouseup", onDragEnded, true);
     window.addEventListener("mousemove", onDrag, true);
 
-    console.log(moveWindowModalButton.value.parentElement);
     isDown.value = true;
     offset.value = [
         moveWindowModalButton.value.parentElement.offsetLeft - e.clientX,
@@ -78,7 +77,6 @@ const onDrag = (e) => {
 };
 
 onMounted(() => {
-
     nextTick(() => {
         moveWindowModalButton.value.addEventListener(
             "mousedown",
@@ -87,6 +85,7 @@ onMounted(() => {
         );
     });
 });
+
 onBeforeUnmount(() => {
     moveWindowModalButton.value.removeEventListener(
         "mousedown",

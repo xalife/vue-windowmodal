@@ -39,7 +39,6 @@ const getStyle = computed(() => {
     width: size.value + 'px',
     height: size.value + 'px',
   };
-  console.log(props.top);
   if (props.top) {
     data['top'] = '-' + size.value / 2 + 'px';
   }
@@ -75,7 +74,6 @@ const currentPosition = ref({
 })
 
 const ondragstart = (e) => {
-  console.log("DRAG BAŞLADI");
   window.addEventListener('mousemove', onDrag, true);
   window.addEventListener('mouseup', ondragended, true);
 
@@ -92,8 +90,6 @@ const ondragended = () => {
 }
 
 const onDrag = (e) => {
-  console.log("DRAGGGNG", e.pageX);
-  console.log("DRAGGGNG", e.pageY);
 
   if (page.value.width < props.minWidth) {
     page.value.width = props.minWidth;
@@ -150,6 +146,7 @@ onMounted(() => {
   });
 });
 
+
 onUnmounted(() => {
   if (squareDOT.value) {
     squareDOT.value.removeEventListener('mousedown', ondragstart, true);
@@ -158,8 +155,4 @@ onUnmounted(() => {
 
 });
 </script>
-<style>
-.square {
-  position: absolute;
-}
-</style>
+<style></style>

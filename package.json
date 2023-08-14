@@ -1,32 +1,39 @@
 {
-  "name": "vue-windowmodal",
-  "version": "0.1.0",
-  "main": "dist/vue-windowmodal.common.js",
-  "module": "dist/vue-windowmodal.umd.min.js",
+  "name": "vuewindowmodal",
+  "version": "0.1.973",
+  "main": "dist/vuewindowmodal.common.js",
+  "module": "dist/vuewindowmodal.umd.min.js",
   "author": "İslam Özçelik",
   "files": [
-    "dist",
-    "index"
+    "dist"
   ],
   "private": false,
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "build:lib": "vue-cli-service build --target lib --name vue-windowmodal src/export.js"
+    "build:lib": "vue-cli-service build --target lib --name vuewindowmodal src/export.js"
   },
   "dependencies": {
     "core-js": "^3.8.3",
     "vue": "^3.2.13"
   },
   "devDependencies": {
-    "@babel/core": "^7.12.16",
+    "@babel/core": "^7.22.10",
     "@babel/eslint-parser": "^7.12.16",
+    "@babel/preset-env": "^7.22.10",
+    "@rollup/plugin-commonjs": "^25.0.4",
+    "@rollup/plugin-node-resolve": "^15.1.0",
     "@vue/cli-plugin-babel": "~5.0.0",
     "@vue/cli-plugin-eslint": "~5.0.0",
     "@vue/cli-service": "~5.0.0",
     "eslint": "^7.32.0",
-    "eslint-plugin-vue": "^8.0.3"
+    "eslint-plugin-vue": "^8.0.3",
+    "rollup": "^2.79.1",
+    "rollup-plugin-babel": "^4.4.0",
+    "rollup-plugin-css-only": "^4.3.0",
+    "rollup-plugin-terser": "^7.0.2",
+    "rollup-plugin-vue": "^6.0.0"
   },
   "eslintConfig": {
     "root": true,

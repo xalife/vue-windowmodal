@@ -1,35 +1,16 @@
 <template>
   <div style="position: relative">
-    <button @click="isModal1Open = true">OPEN MODAL 1</button>
-    <button @click="isModal1Open = false">CLOSE MODAL 1</button>
 
-    <button @click="isModal2Open = true">OPEN MODAL 2</button>
-    <button @click="isModal2Open = false">CLOSE MODAL 2</button>
-    <WindowModal v-if="isModal1Open" ref="windowModalObject" :element-index="1" v-model="page1">
-
-      <div>İLK MODAL</div>
-    </WindowModal>
-
-    <WindowModal v-if="isModal2Open" ref="windowModalObject" :element-index="1" v-model="page2">
-
-
-      <div>İKİNCİ MODAL</div>
+    <WindowModal v-if="true" v-model="page2">
+      <div>Test</div>
     </WindowModal>
   </div>
 </template>
 
 <script setup>
 import { ref } from "vue";
-import WindowModal from "@/components/WindowModal";
-const page1 = ref({
-  width: 200,
-  height: 200,
-  top: 0,
-  left: 0,
-  title: "selam",
-  onTop: true,
-});
 
+import WindowModal from './components/WindowModal.vue'
 const page2 = ref({
   width: 200,
   height: 200,
@@ -38,10 +19,7 @@ const page2 = ref({
   title: "selam",
   onTop: false,
 });
-const windowModalObject = ref();
 
-const isModal1Open = ref(true);
-const isModal2Open = ref(true);
 </script>
 
 <style>
