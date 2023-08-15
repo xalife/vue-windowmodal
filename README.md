@@ -6,6 +6,9 @@ npm i vuewindowmodal
 ```
 
 
+###Demo
+![demo gif](https://raw.githubusercontent.com/xalife/vue-windowmodal/main/sample/gif/vuewindowmodal-sample.gif)
+
 ### Usage
 
 Import Css
