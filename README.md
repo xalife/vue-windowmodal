@@ -5,7 +5,18 @@
 npm i vuewindowmodal
 ```
 
+
 ### Usage
+
+Import Css
+
+```js
+import 'vuewindowmodal/dist/vuewindowmodal.css';
+```
+
+
+
+In Component
 ```html
 <template>
   <div style="position: relative; ">
@@ -112,5 +123,3 @@ If you need to customize the `header` slot is used to display html element as he
 
 ```
 
- ### See 
-  * [Github](https://github.com/xalife/vue-windowmodal)
