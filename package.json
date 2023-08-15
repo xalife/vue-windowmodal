@@ -1,6 +1,6 @@
 {
   "name": "vuewindowmodal",
-  "version": "0.1.973",
+  "version": "0.2.0",
   "main": "dist/vuewindowmodal.common.js",
   "module": "dist/vuewindowmodal.umd.min.js",
   "author": "İslam Özçelik",
