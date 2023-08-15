@@ -6,7 +6,7 @@ npm i vuewindowmodal
 ```
 
 
-###Demo
+### Demo
 ![demo gif](https://raw.githubusercontent.com/xalife/vue-windowmodal/main/sample/gif/vuewindowmodal-sample.gif)
 
 ### Usage
