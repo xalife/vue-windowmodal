@@ -1,24 +1,114 @@
-# window
+# VueWindowModal
 
 ## Project setup
 ```
-npm install
+npm i vuewindowmodal
 ```
 
-### Compiles and hot-reloads for development
-```
-npm run serve
+### Usage
+```html
+<template>
+  <div style="position: relative; ">
+    <WindowModal v-if="showWindow" v-model="page">
+      <div>
+        Body Element
+      </div>
+    </WindowModal>
+  </div>
+</template>
+
+<script>
+import WindowModal from "vuewindowmodal";
+
+import { ref } from 'vue';
+
+export default {
+
+  components: {
+    WindowModal,
+  },
+  setup() {
+    const showWindow = ref(true);
+    const page = ref({
+      width: 200,
+      height: 200,
+      top: 0,
+      left: 0,
+      title: "Hello World",
+      onTop: false,
+      isMimized: false,
+      isExpanded: false,
+    });
+    return {
+      page,
+      showWindow
+    }
+  }
+}
+
+</script>
+
+<style></style>
+
 ```
 
-### Compiles and minifies for production
-```
-npm run build
+### Props
+#### modelValue
+Type: `Array`<br>
+Required: `true`<br>
+Default: `null`
+
+Input object of page to windowModal component.
+It should not be used without v-model directive:
+```javascript
+
+  const page = ref({
+      width: 200, //Width Of the Modal (Required)
+      height: 200, //Height Of the Modal (Required)
+      top: 0, //Top Offset Of the Modal (Required)
+      left: 0, //Left Offset Of the Modal (Required)
+      title: "Hello World", //Title Of the Modal 
+      onTop: false, // is On top of the stack (On multiple modal is used)
+      isMimized: false,
+      isExpanded: false,  
+    });
+
 ```
 
-### Lints and fixes files
-```
-npm run lint
+
+### Slots
+
+#### leading
+The `leading` slot is used to display html element in the header.
+
+```html
+ <WindowModal v-if="showWindow" v-model="page">
+      <template #leading>
+        <div>
+          Custom Leading Element
+        </div>
+      </template>
+      <div>
+        Body Element
+      </div>
+    </WindowModal>
+
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+#### header
+If you need to customize the `header` slot is used to display html element as header.
+
+```html
+ <WindowModal v-if="showWindow" v-model="page">
+      <template #header>
+        <div>
+          Custom Header Element
+        </div>
+      </template>
+      <div>
+        Body Element
+      </div>
+    </WindowModal>
+
+```
+
