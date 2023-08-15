@@ -5,7 +5,20 @@
 npm i vuewindowmodal
 ```
 
+
+
+
 ### Usage
+
+Import Css
+
+```js
+import 'vuewindowmodal/dist/vuewindowmodal.css';
+```
+
+
+
+In Component
 ```html
 <template>
   <div style="position: relative; ">
